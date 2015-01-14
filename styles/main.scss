@@ -1,0 +1,82 @@
+/*******************
+      IMPORTS
+*******************/
+
+@import 'bourbon/bourbon';
+$visual-grid: true;
+@import 'neat/neat';
+
+/*******************
+ RESPONSIVE LAYOUT
+*******************/
+.whole {
+    @include outer-container;
+  }
+
+/**Global Sizes**/
+
+$banner-width: 100%;
+$banner-height: 100%;
+
+/****RESPONSIVE****/
+
+$tablet: new-breakpoint(min-width 501px max-width 840px 2);
+$mobile: new-breakpoint(max-width 500px 12);
+
+.roe,
+.noodles,
+.sashimi {
+  @include span-columns(4);
+  @include media($tablet)
+    {
+      @include span-columns(2);
+      img, p {
+        @include span-columns(1);
+      }
+    }
+
+  @include media($mobile)
+    {
+      @include span-columns(10);
+      p {
+        text-align: justify;
+      }
+    }
+}
+
+
+/*******************
+       COLORS
+*******************/
+$celestial-blue: #47A3DA;
+$primary-color: $celestial-blue;
+
+
+/*******************
+       FONTS
+*******************/
+$primary-font: 'Raleway', sans-serif;
+
+body {
+  font-family: $primary-font;
+
+}
+
+img {
+  max-width: $banner-width;
+  max-height: $banner-height;
+}
+
+/*******************
+       MIXINS
+*******************/
+
+
+/*******************
+        BASE
+*******************/
+
+
+/*******************
+     COMPONENTS
+*******************/
